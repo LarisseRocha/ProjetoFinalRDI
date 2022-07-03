@@ -26,11 +26,17 @@ namespace ProjetoFinalRDI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Turma>>> GetTurmas()
         {
-          if (_context.Turmas == null)
-          {
-              return NotFound();
-          }
-            return await _context.Turmas.ToListAsync();
+            return await _context.Turmas.Where(a => a.Ativo == true).ToListAsync();
+
+           
+
+                if (_context.Turmas == null)
+              {
+                  return NotFound();
+              }
+
+            
+            
         }
 
         // GET: api/Turma/5
@@ -122,8 +128,6 @@ namespace ProjetoFinalRDI.Controllers
 
 
             return NoContent();
-
-           
 
 
         }
