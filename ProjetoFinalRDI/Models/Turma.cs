@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ProjetoFinalRDI.Models
 {
@@ -11,6 +12,7 @@ namespace ProjetoFinalRDI.Models
 
         [Column("ativo")]
         public bool Ativo { get; set; }
+        [JsonIgnore]
         public virtual List<Aluno>? Aluno { get;  set; }
     }
 }

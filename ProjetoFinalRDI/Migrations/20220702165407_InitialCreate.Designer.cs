@@ -12,8 +12,8 @@ using ProjetoFinalRDI.Context;
 namespace ProjetoFinalRDI.Migrations
 {
     [DbContext(typeof(ProjetoFinalContext))]
-    [Migration("20220702033137_subir_bd_inicial")]
-    partial class subir_bd_inicial
+    [Migration("20220702165407_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
