@@ -12,8 +12,8 @@ using ProjetoFinalRDI.Context;
 namespace ProjetoFinalRDI.Migrations
 {
     [DbContext(typeof(ProjetoFinalContext))]
-    [Migration("20220702165407_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220704115838_CriacaoInicial")]
+    partial class CriacaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -57,7 +57,7 @@ namespace ProjetoFinalRDI.Migrations
 
                     b.HasIndex("TurmaId");
 
-                    b.ToTable("Aluno", (string)null);
+                    b.ToTable("Alunos", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoFinalRDI.Models.Turma", b =>
@@ -79,7 +79,7 @@ namespace ProjetoFinalRDI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Turma", (string)null);
+                    b.ToTable("Turmas", (string)null);
                 });
 
             modelBuilder.Entity("ProjetoFinalRDI.Models.Aluno", b =>
