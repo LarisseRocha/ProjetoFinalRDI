@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProjetoFinalRDI.Migrations
 {
-    public partial class CriacaoInicial : Migration
+    public partial class VersaoInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -26,27 +25,23 @@ namespace ProjetoFinalRDI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Turma>>> GetTurmas()
         {
+           
+            if (_context.Turmas == null)
+            {
+                return NotFound();
+            }
             return await _context.Turmas.Where(a => a.Ativo == true).ToListAsync();
 
-           
-
-                if (_context.Turmas == null)
-              {
-                  return NotFound();
-              }
-
-            
-            
         }
 
         // GET: api/Turma/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Turma>> GetTurma(int id)
         {
-            if (_context.Turmas == null)
-            {
-                return NotFound();
-            }
+          if (_context.Turmas == null)
+          {
+              return NotFound();
+          }
             var turma = await _context.Turmas.FindAsync(id);
 
             if (turma == null)
@@ -107,11 +102,10 @@ namespace ProjetoFinalRDI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTurma(int id)
         {
-            if(_context.Alunos.Where(a => a.TurmaId == id).Count() > 0)
+            if (_context.Alunos.Where(a => a.TurmaId == id).Count() > 0)
             {
                 return BadRequest();
             }
-
 
             if (_context.Turmas == null)
             {
@@ -121,15 +115,12 @@ namespace ProjetoFinalRDI.Controllers
             if (turma == null)
             {
                 return NotFound();
-            }else 
+            }
 
             _context.Turmas.Remove(turma);
             await _context.SaveChangesAsync();
 
-
             return NoContent();
-
-
         }
 
         private bool TurmaExists(int id)
