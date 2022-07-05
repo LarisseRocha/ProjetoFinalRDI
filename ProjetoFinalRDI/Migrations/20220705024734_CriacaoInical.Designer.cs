@@ -12,8 +12,8 @@ using ProjetoFinalRDI.Context;
 namespace ProjetoFinalRDI.Migrations
 {
     [DbContext(typeof(ProjetoFinalContext))]
-    [Migration("20220704185707_VersaoInicial")]
-    partial class VersaoInicial
+    [Migration("20220705024734_CriacaoInical")]
+    partial class CriacaoInical
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
